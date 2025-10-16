@@ -5,16 +5,18 @@ return {
 		require("conform").setup({
 			format_on_save = {
 				timeout_ms = 5000,
-                lsp_format = "fallback",
+				lsp_format = "fallback",
 			},
 			formatters_by_ft = {
+				python = { "isort", "black" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
 				lua = { "stylua" },
-				go = { "gofmt" },
+				go = { "goimports", "gofmt" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
 				elixir = { "mix" },
+				rust = { "rustfmt" },
 			},
 			formatters = {
 				["clang-format"] = {
